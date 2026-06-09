@@ -1,0 +1,88 @@
+資料來源網站: https://archive.ics.uci.edu/dataset/222/bank+marketing
+
+網站資料描述：
+銀行行銷 (Bank Marketing)
+提供日期：2012年2月13日
+此資料與葡萄牙銀行機構的直接行銷活動（電話行銷）相關。分類目標是預測客戶是否會訂閱定期存款（變數 y）。
+
+資料集特性
+多變量 (Multivariate)
+
+學科領域
+商業 (Business)
+
+相關任務
+分類 (Classification)
+
+特徵類型
+類別型、整數 (Categorical, Integer)
+
+實例數量 (Instances)
+45211
+
+特徵數量 (Features)
+16
+
+資料集資訊
+附加資訊：
+資料與葡萄牙銀行機構的直接行銷活動相關。行銷活動基於電話聯繫。通常需要多次聯繫同一位客戶，才能確定產品（銀行定期存款）是否被訂閱（'yes'）或不訂閱（'no'）。
+
+共有四個資料集：
+1) bank-additional-full.csv：包含所有樣本 (41188) 和 20 個輸入項，按日期排序（從 2008 年 5 月到 2010 年 11 月），與 [Moro et al., 2014] 中分析的資料非常接近。
+2) bank-additional.csv：從 1) 中隨機選取的 10% 樣本 (4119)，包含 20 個輸入項。
+3) bank-full.csv：包含所有樣本和 17 個輸入項，按日期排序（較早版本的資料集，輸入項較少）。
+4) bank.csv：從 3) 中隨機選取的 10% 樣本，包含 17 個輸入項（較早版本的資料集，輸入項較少）。
+提供最小的資料集是為了測試計算需求較高的機器學習演算法（如 SVM）。
+
+分類目標是預測客戶是否會訂閱（yes/no）定期存款（變數 y）。
+
+是否有缺失值？
+否 (No)
+
+變數列表
+變數名稱 | 角色 | 類型 | 人口統計 | 描述 | 單位 | 缺失值
+age | 特徵 | 整數 | 年齡 | | | 否
+job | 特徵 | 類別型 | 職業 | 職業類型 | | 否
+marital | 特徵 | 類別型 | 婚姻狀況 | 婚姻狀況 | | 否
+education | 特徵 | 類別型 | 教育程度 | 教育程度 | | 否
+default | 特徵 | 二元型 | | 是否有信用違約？ | | 否
+balance | 特徵 | 整數 | | 平均年餘額 | 歐元 | 否
+housing | 特徵 | 二元型 | | 是否有房貸？ | | 否
+loan | 特徵 | 二元型 | | 是否有個人貸款？ | | 否
+contact | 特徵 | 類別型 | | 聯繫通訊類型 | | 是
+day_of_week | 特徵 | 日期 | | 本週最後聯繫日 | | 否
+month | 特徵 | 日期 | | 一年中的最後聯繫月份 | | 否
+duration | 特徵 | 整數 | | 最後一次聯繫的持續時間（秒）。重要提示：此屬性高度影響輸出目標（例如，如果 duration=0 則 y='no'）。但在通話前無法得知 duration。通話結束後 y 顯然已成已知。因此，此輸入僅應用於基準測試，若目的是建立現實的預測模型則應捨棄。 | | 否
+campaign | 特徵 | 整數 | | 此活動期間對此客戶的聯繫次數 | | 否
+pdays | 特徵 | 整數 | | 上次活動聯繫後經過的天數（-1 表示之前未聯繫） | | 是
+previous | 特徵 | 整數 | | 此活動前對此客戶的聯繫次數 | | 否
+poutcome | 特徵 | 類別型 | | 上次行銷活動的結果 | | 是
+y | 目標 | 二元型 | | 客戶是否訂閱了定期存款？ | | 否
+
+補充變數資訊
+
+輸入變數：
+# 銀行客戶資料：
+1 - age：年齡（數字）
+2 - job：職業類型（類別型：'admin.', 'unknown', 'unemployed', 'management', 'housemaid', 'entrepreneur', 'student', 'blue-collar', 'self-employed', 'retired', 'technician', 'services'）
+3 - marital：婚姻狀況（類別型：'married', 'divorced', 'single'；註：'divorced' 指離婚或喪偶）
+4 - education：教育程度（類別型：'unknown', 'secondary', 'primary', 'tertiary'）
+5 - default：是否有信用違約？（二元型：'yes', 'no'）
+6 - balance：平均年餘額，單位為歐元（數字）
+7 - housing：是否有房屋貸款？（二元型：'yes', 'no'）
+8 - loan：是否有個人貸款？（二元型：'yes', 'no'）
+
+# 與當前活動最後一次聯繫相關：
+9 - contact：聯繫通訊類型（類別型：'unknown', 'telephone', 'cellular'）
+10 - day：月份中的最後聯繫日（數字）
+11 - month：一年中的最後聯繫月份（類別型：'jan', 'feb', 'mar', ..., 'nov', 'dec'）
+12 - duration：最後一次聯繫的持續時間，單位為秒（數字）
+
+# 其他屬性：
+13 - campaign：此活動期間對此客戶的聯繫次數（數字，包含最後一次聯繫）
+14 - pdays：上次活動聯繫後經過的天數（數字，-1 表示之前未聯繫）
+15 - previous：此活動前對此客戶的聯繫次數（數字）
+16 - poutcome：上次行銷活動的結果（類別型：'unknown', 'other', 'failure', 'success'）
+
+輸出變數（目標）：
+17 - y：客戶是否訂閱了定期存款？（二元型：'yes', 'no'）
