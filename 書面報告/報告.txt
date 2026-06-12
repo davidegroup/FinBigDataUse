@@ -14,8 +14,33 @@
 二、研究方法與分析執行
 2.1 研究對象與資料來源
 本研究採用 UCI Machine Learning Repository 的 Bank Marketing Dataset。
-資料規模：共 45,211 筆實例，包含 16 個特徵變數。
-目標變數 (y)：客戶是否訂閱定期存款（'yes' 或 'no'）。
+(https://archive.ics.uci.edu/dataset/222/bank+marketing)
+
+資料規模：共 45,211 筆實例，包含 16 個特徵變數：
+# 銀行客戶資料：
+1 - age：年齡（數字）
+2 - job：職業類型（類別型：'admin.', 'unknown', 'unemployed', 'management', 'housemaid', 'entrepreneur', 'student', 'blue-collar', 'self-employed', 'retired', 'technician', 'services'）
+3 - marital：婚姻狀況（類別型：'married', 'divorced', 'single'；註：'divorced' 指離婚或喪偶）
+4 - education：教育程度（類別型：'unknown', 'secondary', 'primary', 'tertiary'）
+5 - default：是否有信用違約？（二元型：'yes', 'no'）
+6 - balance：平均年餘額，單位為歐元（數字）
+7 - housing：是否有房屋貸款？（二元型：'yes', 'no'）
+8 - loan：是否有個人貸款？（二元型：'yes', 'no'）
+
+# 與當前活動最後一次聯繫相關：
+9 - contact：聯繫通訊類型（類別型：'unknown', 'telephone', 'cellular'）
+10 - day：月份中的最後聯繫日（數字）
+11 - month：一年中的最後聯繫月份（類別型：'jan', 'feb', 'mar', ..., 'nov', 'dec'）
+12 - duration：最後一次聯繫的持續時間，單位為秒（數字）
+
+# 其他屬性：
+13 - campaign：此活動期間對此客戶的聯繫次數（數字，包含最後一次聯繫）
+14 - pdays：上次活動聯繫後經過的天數（數字，-1 表示之前未聯繫）
+15 - previous：此活動前對此客戶的聯繫次數（數字）
+16 - poutcome：上次行銷活動的結果（類別型：'unknown', 'other', 'failure', 'success'）
+
+輸出變數（目標）：
+17 - y：客戶是否訂閱了定期存款？（二元型：'yes', 'no'）
 
 2.2 分析執行過程
 本研究執行了三項核心分析，並產生相對應的視覺化圖表：
